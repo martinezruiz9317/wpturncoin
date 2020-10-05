@@ -236,7 +236,7 @@ function addDarkModeSwtich(){
 		$checked = '';
 	}
 	?>
-	<div>
+	<div class="switch-cnt">
 		<label class="switch">
                 <input id="darkmode" type="checkbox" <?php echo $checked; ?>>
                 <span class="slider round"></span>

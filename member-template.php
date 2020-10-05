@@ -73,14 +73,17 @@ foreach ($custom_terms as $custom_term) {
             while ($loop->have_posts()) {
                 $loop->the_post();
             ?>
-                <div class="my-col-20 member-col-out">
+                <div class="my-col-4 member-col-out">
                     <?php
-                    echo '<div class="member-col-in"><a class="m-open-popup" onClick="openMemberModal(' . get_the_id() . ')">';
+                    echo '<div class="member-col-in my-col-4"><a class="m-open-popup" onClick="openMemberModal(' . get_the_id() . ')">';
                     if (has_post_thumbnail()) {
                         echo get_the_post_thumbnail();
                     }
+                    echo '</a></div>';
+                    echo '<div class="member-text-cnt my-col-8"><a class="m-open-popup" onClick="openMemberModal(' . get_the_id() . ')">';
                     echo '<h2 class="member-name">' . get_the_title() . '</h2>';
-                    echo '<h3 class="member-title">' . get_post_meta(get_the_id(), 'memtitle', true) . '</h3>';
+                    echo '<h3 class="member-title c-gold">' . get_post_meta(get_the_id(), 'memtitle', true) . '</h3>';
+                    echo '<p class="member-desc">' . get_the_excerpt() . '</p>';
                     echo '</a></div>';
                     ?>
                 </div>

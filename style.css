@@ -113,6 +113,30 @@ Version: 1.0.0
 }
 /* Helpers End */
 
+/* Header */
+
+#site-logo {
+    -ms-flex-order: 1;
+    order: 1;
+}
+#site-navigation-wrap {
+    -ms-flex-order: 2;
+    order: 2;
+    padding: 0 20px;
+}
+.oceanwp-social-menu.simple-social {
+    -ms-flex-order: 3;
+    order: 3;
+    right: 0;
+    padding: 0 20px;
+}
+.switch-cnt {
+    -ms-flex-order: 4;
+    order: 4;
+}
+
+/* Header */
+
 
 #site-header-inner.container{
     width: 1200px;
@@ -512,25 +536,6 @@ img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
     width: 100%;
     max-width: 168px;
 }
-h2.member-name {
-    position: relative;
-    margin-top: 27px;
-    color: #000;
-    font-size: 24px;
-    font-weight: 600;
-    white-space: nowrap;
-    text-align: center;
-    text-transform: uppercase;
-    height: 30px;
-}
-h3.member-title {
-    margin-top: 5px;
-    color: #d0ad6a;
-    font-size: 18px;
-    font-weight: 500;
-    height: 60px;
-    text-transform: capitalize;
-}
 
 #members-9 img, #members-12 img {
     border-radius: 100px;
@@ -538,6 +543,42 @@ h3.member-title {
 .pop-cat-9 img.attachment-large.size-large.wp-post-image, .pop-cat-12 img.attachment-large.size-large.wp-post-image {
     border-radius: 200px !important;
 }
+
+/* New Team Styles */
+
+.member-col-out {
+    display: -ms-flexbox;
+    display: flex;
+}
+.member-text-cnt {
+    padding: 0 20px;
+}
+h2.member-name {
+    position: relative;
+    /* margin-top: 27px; */
+    color: #000;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-align: left;
+    text-transform: uppercase;
+    /* height: 30px; */
+}
+h3.member-title {
+    margin-top: 5px;
+    color: #d0ad6a;
+    font-size: 18px;
+    font-weight: 700;
+    /* height: 60px; */
+    text-transform: capitalize;
+}
+p.member-desc {
+    margin-top: 5px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 300;
+}
+
 
 /* NEW STYLES */
 body {
