@@ -191,8 +191,9 @@ li.current-menu-item a span:after{
     display: none;
 }
 .postentry-date{
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #D0AD6A;
 }
 .blog-entry.thumbnail-entry{
     padding: 50px 0;
@@ -203,16 +204,23 @@ li.current-menu-item a span:after{
     margin-bottom: 10px;
 }
 #blog-entries .blog-entry:nth-child(even){
-    background-color: #FCF8F2;
+    background-color: #000000;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    color: #ffffff;
+}
+body.dark-mode #blog-entries .blog-entry:nth-child(even){
+    border-top: 1px solid #FF0000;
+    border-bottom: 1px solid #FF0000; 
 }
 .blog-entry-readmore i{
     display: none;
 }
 .blog-entry-readmore a{
-    font-size: 20px;
-    font-weight: 600;
-    border: 2px solid #D0AD6A;
-    padding: 4px 40px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid #FF0000;
+    padding: 8px 40px;
     width: 190px;
     text-align: center;
     display: inline-block;
@@ -226,10 +234,6 @@ li.current-menu-item a span:after{
     width: 190px;
     text-align: center;
     display: inline-block;
-}
-.blog-entry-readmore a:hover{
-    background-color: #D0AD6A;
-    color: #ffffff;
 }
 .back-btn{
     max-width: 1000px;
@@ -267,11 +271,19 @@ li.current-menu-item a span:after{
 .single-event .entry-content, .single-event .entry-header{
     padding: 0 20px;
 }
-
+#blog-entries .blog-entry:nth-child(even) .blog-entry-title.entry-title a, #blog-entries .blog-entry:nth-child(even) p{
+    color: #ffffff;
+}
+body.dark-mode .blog-entry-title.entry-title a, body.dark-mode .blog-entry-readmore a{
+    color: #ffffff;
+}
+#blog-entries .blog-entry:nth-child(even) .blog-entry-readmore a{
+    color: #ffffff;
+}
 .blog-entry-title.entry-title{
-    font-size: 30px;
+    font-size: 26px;
     margin: 0;
-    font-weight: 400;
+    font-weight: 300;
 }
 .slick-dots li button{
     background: #000000;
@@ -320,6 +332,16 @@ li.current-menu-item a span:after{
 }
 .city-cnt{
     margin-bottom: 35px;
+}
+.footer-address{
+    font-size: 12px;
+    line-height: 1.6;
+}
+.footer-logo{
+    margin-bottom: 20px;
+}
+.footer-logo svg{
+    width: 74px;
 }
 .footer-contact-info{
     margin-bottom: 45px;
@@ -874,6 +896,7 @@ body.light-mode #blockSection {
     border-top: 4px solid #D0AD6A;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
     padding: 0 20px 20px;
+    height: 100%;
 }
 
 body.light-mode .block-inner {

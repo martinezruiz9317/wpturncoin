@@ -1,10 +1,8 @@
 <?php
-// include head
-// include_once('header.php');
 get_header();
 ?>
 <div id="fullpage">
-    <div class="section fp-auto-height">
+    <div class="section">
         <?php get_template_part('templates/home', 'people'); ?>
     </div>
     <div id="blockSection" class="section fp-auto-height">

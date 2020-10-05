@@ -55,6 +55,8 @@ jQuery(document).ready(function ($) {
         }
         $.ajax({
             url: adurl,
+            method: "POST",
+            cache: false,
             data: {
                 settheme: tid,
                 action: 'turncoin_set_thememode_cookie',

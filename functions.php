@@ -58,7 +58,7 @@ if (!function_exists('read_more_on_thumbnail')) {
  */
 function myprefix_post_readmore_link_text()
 {
-	return 'MORE';
+	return '<span>MORE</span>';
 }
 add_filter('ocean_post_readmore_link_text', 'myprefix_post_readmore_link_text');
 
@@ -159,8 +159,14 @@ function dmnTitleshorcode()
 add_shortcode('footercnt', 'dmnDisplayFooterContent');
 function dmnDisplayFooterContent()
 {
-	error_log($_COOKIE['darkmode']);
+	// error_log($_COOKIE['darkmode']);
 	echo get_template_part('parts/footer-cnt');
+}
+add_shortcode('footercol1', 'dmnDisplayFooterCol1');
+function dmnDisplayFooterCol1()
+{
+	// error_log($_COOKIE['darkmode']);
+	echo get_template_part('parts/footer-col1');
 }
 
 function dmn_single_meta()
@@ -207,21 +213,26 @@ function my_excerpt_length($length)
 add_filter('oceanwp_excerpt', 'my_excerpt_length');
 
 
-add_action('init', 'turncoin_add_theme_cookie');
+add_action('wp', 'turncoin_add_theme_cookie');
 function turncoin_add_theme_cookie(){
-	//unset($_COOKIE['darkmode']);
-	if (!isset($_COOKIE['darkmode'])) {
+	// unset($_COOKIE["darkmode"]);
+	if (!isset($_COOKIE["darkmode"])) {
+		$ckval = "light";
 		error_log('Cookie Set for first time');
-		setcookie('darkmode', 0, time()+31556926);
-		error_log($_COOKIE['darkmode']);
+		setcookie("darkmode", $ckval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
+		error_log($_COOKIE["darkmode"]);
 	}
+
+	// foreach($_COOKIE as $key => $cookie){
+	// 	error_log($key.' => '. $cookie);
+	// }
 }
 
 add_filter( 'body_class', function( $classes ) {
-	if ($_COOKIE['darkmode'] == 1) {
+	if ($_COOKIE["darkmode"] === "dark") {
 		$darkmodeclass = array('dark-mode');
 	}
-	else{
+	else if($_COOKIE["darkmode"] === "light"){
 		$darkmodeclass = array('light-mode');
 	}
     return array_merge( $classes, $darkmodeclass );
@@ -229,10 +240,11 @@ add_filter( 'body_class', function( $classes ) {
 
 add_action( 'ocean_after_nav', 'addDarkModeSwtich' );
 function addDarkModeSwtich(){
-	if ($_COOKIE['darkmode'] == 1) {
+	if ($_COOKIE["darkmode"] === "dark") {
 		$checked = 'checked';
 		error_log('checked');
-	} else{
+	} else if($_COOKIE["darkmode"] === "light"){
+		error_log('Not checked');
 		$checked = '';
 	}
 	?>
@@ -259,28 +271,30 @@ function turncoin_set_thememode_cookie()
 {
 	check_ajax_referer('darkmode-check', 'security');
 	$mode = false;
-	if(isset($_GET['settheme'])){
+	if(isset($_POST['settheme'])){
 		$mode = true;
-		$id = $_GET['settheme'];
+		$id = $_POST['settheme'];
 		error_log($id);
-		if ($id == 1) {
+		if ($_COOKIE == "dark") {
+			$modeval = "dark";
 			error_log('lightmode is set');
 			// error_log($_POST["settheme"] . '-true');
-			// setcookie('darkmode', 0, time()+31556926);
-			$_COOKIE['darkmode'] = 0;
+			// setcookie("darkmode", $modeval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
+			$_COOKIE["darkmode"] = $modeval;
 		} else {
+			$modeval = "dark";
 			error_log('darkmode is set');
 			// error_log($_POST["settheme"] . '-false');
-			// setcookie('darkmode', 1, time()+31556926);
-			$_COOKIE['darkmode'] = 1;
-			error_log($_COOKIE['darkmode']);
+			// setcookie("darkmode", $modeval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
+			$_COOKIE["darkmode"] = $modeval;
+			error_log($_COOKIE["darkmode"]);
 		}
 	}
-	if($mode){
-		wp_send_json(array('mode_set' => $mode));
-	}
-	else{
-		wp_send_json(array('error' => '1'));
-	}
-	// wp_die();
+	// if($mode){
+	// 	wp_send_json(array('mode_set' => $mode));
+	// }
+	// else{
+	// 	wp_send_json(array('error' => '1'));
+	// }
+	wp_die();
 }
