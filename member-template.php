@@ -83,7 +83,8 @@ foreach ($custom_terms as $custom_term) {
                     echo '<div class="member-text-cnt my-col-8"><a class="m-open-popup" onClick="openMemberModal(' . get_the_id() . ')">';
                     echo '<h2 class="member-name">' . get_the_title() . '</h2>';
                     echo '<h3 class="member-title c-gold">' . get_post_meta(get_the_id(), 'memtitle', true) . '</h3>';
-                    echo '<p class="member-desc">' . get_the_excerpt() . '</p>';
+                    $my_content = apply_filters( 'the_content', get_the_content() );
+                    echo '<p class="member-desc">' . wp_trim_words( $my_content, 30); '</p>';
                     echo '</a></div>';
                     ?>
                 </div>
