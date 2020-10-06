@@ -449,10 +449,6 @@ body.dark-mode #footer-widgets input[type="email"]{
     transform: translate(0, 20%);
 }
 
-#memeberDescription {
-    font-size: 14px;
-}
-
 #member-modal.pop-is-open {
     -webkit-transform: translate(0, -50%);
     -moz-transform: translate(0, -50%);
@@ -475,7 +471,6 @@ body.dark-mode #footer-widgets input[type="email"]{
 }
 
 .pop-cnt-wrap {
-    border-right: 1px solid #ffffff;
     height: 100%;
     padding-right: 20px;
 }
@@ -488,11 +483,24 @@ body.dark-mode #footer-widgets input[type="email"]{
     color: #000000;
 }
 
-.close-popup-member .fas{
+/* .close-popup-member .fas{
     font-size: 25px;
 }
 .close-popup-member .fas:hover{
     color: #d0ad6a;
+} */
+
+.close-popup-member .fa-times:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(http://localhost:8888/turncoin/wordpress/wp-content/uploads/2020/10/close.png);
+    background-size: cover;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    right: -15px;
+    top: -15px;
 }
 
 div#members-11 {
@@ -552,13 +560,14 @@ div#members-11 {
 div#mempos {
     font-size: 24px;
     color: #d0ad6a;
-    font-weight: 500;
+    font-weight: 300;
+    margin-top: -10px;
     margin-bottom: 16px;
     text-transform: capitalize;
 }
 #memeberDescription {
     color: #000;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* Modal END */
@@ -569,23 +578,30 @@ div#mempos {
  }
 
  /*** Team ***/
+
+ .pg-title-cnt {
+    text-align: center;
+}
  .meme-cat-subheading {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1;
     text-align: center;
     font-weight: 500;
     margin-bottom: 30px;
     margin-top: -50px;
+    color: #000000;
 }
 .blingbling {
     color: #d0ad6a;
     margin-bottom: 20px;
+    font-size: 30px;
+    margin: -30px 0 35px;
 }
 
 .mem-cat-name {
-    margin: 0;
-    font-size: 70px;
-    font-weight: 400;
+    margin: -10px 0 30px;
+    font-size: 72px;
+    font-weight: 800;
 }
 .page-id-141 .d-flex.align-items-center.justify-content-center {
 	max-width: 1200px;
@@ -613,6 +629,7 @@ div#mempos {
 .member-col-out {
     display: -ms-flexbox;
     display: flex;
+    margin-bottom: 30px;
 }
 .member-text-cnt {
     padding: 0 20px;
@@ -620,17 +637,20 @@ div#mempos {
 h2.member-name {
     position: relative;
     /* margin-top: 27px; */
-    color: #000;
+    color: #d0ad6a;
     font-size: 20px;
     font-weight: 800;
+    line-height: 1.2;
     /* white-space: nowrap; */
     text-align: left;
     text-transform: uppercase;
     /* height: 30px; */
+    margin: 0;
 }
 h3.member-title {
-    margin-top: 5px;
-    color: #d0ad6a;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    color: #000000;
     font-size: 16px;
     font-weight: 700;
     /* height: 60px; */
@@ -646,12 +666,25 @@ body.dark-mode p.member-desc a{
     color: #ffffff;
 }
 .meber-cat-wrap {
-    max-width: 1300px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
 }
 .member-col-in img {
     border: 1px solid #707070;
+}
+#memberImgPop img {
+    border: 1px solid #FF0000;
+}
+#memberTitle {
+    font-size: 30px;
+    color: #D0AD6A;
+    font-weight: 800;
+    margin: 0;
+}
+#members-cnt-9, #members-cnt-12 {
+    background: #F4F4F4;
+    padding: 30px 0;
 }
 
 
@@ -781,6 +814,26 @@ body.dark-mode .graph-c-black {
 body.dark-mode .graph-c-gold {
     fill: #D0AD6A;
 }
+
+body.light-mode .mem-box {
+    background: #ffffff;
+}
+body.dark-mode .mem-box {
+    background: #000000;
+}
+body.light-mode #mempos {
+    color: #000000;
+}
+body.dark-mode #mempos {
+    color: #ffffff;
+}
+body.light-mode #memeberDescription {
+    color: #000000;
+}
+body.dark-mode #memeberDescription {
+    color: #ffffff;
+}
+
 
 img {
     max-width: 100%;
@@ -2150,9 +2203,6 @@ svg {
 	div#mempos {
     	font-size: 20px;
 	}
-	#memeberDescription {
-    	font-size: 14px;
-	}
 	#member-modal.pop-is-open #memberImgPop img {
     	max-width: 200px;
 	}
@@ -2169,7 +2219,13 @@ svg {
         padding-right: 0;
     }
     #member-modal{
-        padding: 30px;
+        padding: 30px 30px 80px;
+    }
+    #member-modal.pop-is-open {
+        top: 60%;
+    }
+    .member-col-in.my-col-4 {
+        padding: 0 20px 10px;
     }
 }
 
@@ -2196,6 +2252,22 @@ svg {
     .b-hide-top{
         border-top: 0;
     }
+    .switch-text {
+        display: none;
+    }
+    .switch-cnt {
+        right: 50px;
+    }
+    .member-col-in.my-col-4 {
+        text-align: center;
+    }
+    .member-text-cnt.my-col-8 {
+        text-align: center;
+    }
+    h2.member-name {
+        text-align: center;
+    }
+    
 }
   
 

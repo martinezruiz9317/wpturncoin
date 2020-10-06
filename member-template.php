@@ -19,7 +19,7 @@ $custom_terms = get_terms(array(
 
 foreach ($custom_terms as $custom_term) {
     // print_r($custom_term);
-    echo '<div id="members-' . $custom_term->term_id . '" class="meber-cat-wrap">';
+    echo '<div id="members-cnt-' . $custom_term->term_id . '" class="member-cat-cnt"><div id="members-' . $custom_term->term_id . '" class="meber-cat-wrap">';
     wp_reset_query();
     $args = array(
         'post_type' => 'members',
@@ -42,11 +42,12 @@ foreach ($custom_terms as $custom_term) {
         }
         else{
         ?>
-        <div class="d-flex align-items-center justify-content-center">
-        <div class="line-divider flex-fill"></div>
+        <div class="pg-title-cnt">
+        <!-- <div class="line-divider flex-fill"></div> -->
+        <h3 class="c-gold">The passionate beings.</h3>
         <div class="pg-title">
         <?php echo '<h2 class="mem-cat-name">' . $custom_term->name . '</h2></div>'; ?>
-        <div class="line-divider flex-fill"></div>
+        <!-- <div class="line-divider flex-fill"></div> -->
         </div>
 
         <?php 
@@ -73,7 +74,8 @@ foreach ($custom_terms as $custom_term) {
             while ($loop->have_posts()) {
                 $loop->the_post();
             ?>
-                <div class="my-col-4 member-col-out">
+                <div class="my-col-6 member-col-out">
+                <div class="my-row">
                     <?php
                     echo '<div class="member-col-in my-col-4"><a class="m-open-popup" onClick="openMemberModal(' . get_the_id() . ')">';
                     if (has_post_thumbnail()) {
@@ -85,14 +87,17 @@ foreach ($custom_terms as $custom_term) {
                     echo '<h3 class="member-title c-gold">' . get_post_meta(get_the_id(), 'memtitle', true) . '</h3>';
                     $my_content = apply_filters( 'the_content', get_the_content() );
                     echo '<p class="member-desc">' . wp_trim_words( $my_content, 15); '</p>';
+                    echo '<p class="member-desc" style="font-weight: 700;">MORE</p>';
                     echo '</a></div>';
                     ?>
+                </div>
                 </div>
         <?php
             }
         }
         wp_reset_query();
         ?>
+        </div>
         </div>
     </div>
     <?php
