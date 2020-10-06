@@ -448,17 +448,11 @@ body.dark-mode .blog-entry-title.entry-title a, body.dark-mode .blog-entry-readm
 }
 
 div#members-11 {
-    background: #fcf9f4;
+    /* background: #fcf9f4; */
     padding-top: 30px;
 }
 #members-8 img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
     border-radius: 300px;
-}
-#member-modal.pop-is-open #memberImgPop img {
-    border-radius: 0;
-    border: 2px solid #d0ad6a;
-    max-width: 240px;
-    width: 100%;
 }
 
 .m-open-popup:hover {
@@ -553,18 +547,18 @@ div#mempos {
     max-width: 1200px;
     margin: 0 auto;
 }
-img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+/* img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
     border: 2px solid #d0ad6a;
     width: 100%;
     max-width: 168px;
-}
+} */
 
-#members-9 img, #members-12 img {
+/* #members-9 img, #members-12 img {
     border-radius: 100px;
-}
-.pop-cat-9 img.attachment-large.size-large.wp-post-image, .pop-cat-12 img.attachment-large.size-large.wp-post-image {
+} */
+/* .pop-cat-9 img.attachment-large.size-large.wp-post-image, .pop-cat-12 img.attachment-large.size-large.wp-post-image {
     border-radius: 200px !important;
-}
+} */
 
 /* New Team Styles */
 
@@ -581,7 +575,7 @@ h2.member-name {
     color: #000;
     font-size: 24px;
     font-weight: 800;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-align: left;
     text-transform: uppercase;
     /* height: 30px; */
@@ -599,6 +593,14 @@ p.member-desc {
     color: #000000;
     font-size: 16px;
     font-weight: 300;
+}
+.meber-cat-wrap {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+.member-col-in img {
+    border: 1px solid #707070;
 }
 
 

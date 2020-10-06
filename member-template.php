@@ -84,7 +84,7 @@ foreach ($custom_terms as $custom_term) {
                     echo '<h2 class="member-name">' . get_the_title() . '</h2>';
                     echo '<h3 class="member-title c-gold">' . get_post_meta(get_the_id(), 'memtitle', true) . '</h3>';
                     $my_content = apply_filters( 'the_content', get_the_content() );
-                    echo '<p class="member-desc">' . wp_trim_words( $my_content, 30); '</p>';
+                    echo '<p class="member-desc">' . wp_trim_words( $my_content, 15); '</p>';
                     echo '</a></div>';
                     ?>
                 </div>
