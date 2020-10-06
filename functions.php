@@ -23,10 +23,10 @@
 function turncoin_child_enqueue_parent_style()
 {
 	// Dynamically get version number of the parent stylesheet (lets browsers re-cache your stylesheet when you update your theme)
-	$theme   = wp_get_theme('Turncoin');
+	$theme   = wp_get_theme('OceanWP');
 	$version = $theme->get('Version');
 	// Load the stylesheet
-	wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/extensions/fullpage/fullpage.css', array(), $version);
+	wp_enqueue_style('fullpage-css', get_stylesheet_directory_uri() . '/extensions/fullpage/fullpage.css', array(), $version);
 	wp_enqueue_style('turncoin-flex-style', get_stylesheet_directory_uri() . '/dist/css/flex.css', array(), $version);
 	wp_enqueue_style('turncoin-style', get_stylesheet_directory_uri() . '/style.css', array('oceanwp-style'), $version);
 	
@@ -34,7 +34,7 @@ function turncoin_child_enqueue_parent_style()
 	wp_enqueue_script('TweenMax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js', array(), $version, true);
 	wp_enqueue_script('turncoin-js', get_stylesheet_directory_uri() . '/js/main.js', array(), $version, true);
 }
-add_action('wp_enqueue_scripts', 'turncoin_child_enqueue_parent_style', 100);
+add_action('wp_enqueue_scripts', 'turncoin_child_enqueue_parent_style');
 
 add_action('ocean_after_blog_entry_title', 'dmnAddDateAfterTitle');
 function dmnAddDateAfterTitle()
@@ -66,10 +66,10 @@ add_action('ocean_after_single_post_content', 'dmnAddBackBtn');
 function dmnAddBackBtn()
 {
 	if (is_singular('event')) {
-		echo '<div class="back-btn"><a href="' . get_site_url() . '/events/">BACK</a></div>';
+		echo '<div class="back-btn"><a class="my-btn" href="' . get_site_url() . '/events/"><span>BACK</span></a></div>';
 	}
 	if (is_singular('post')) {
-		echo '<div class="back-btn"><a href="' . get_site_url() . '">BACK</a></div>';
+		echo '<div class="back-btn"><a class="my-btn" href="' . get_site_url() . '"><span>BACK</span></a></div>';
 	}
 }
 
@@ -219,7 +219,7 @@ function turncoin_add_theme_cookie(){
 	if (!isset($_COOKIE["darkmode"])) {
 		$ckval = "light";
 		error_log('Cookie Set for first time');
-		setcookie("darkmode", $ckval, time()+3600, '/');
+		setcookie("darkmode", $ckval, time()+60*60*24*30, '/');
 		error_log($_COOKIE["darkmode"]);
 	}
 	// foreach($_COOKIE as $key => $cookie){
@@ -281,14 +281,14 @@ function turncoin_set_thememode_cookie()
 			$modeval = "light";
 			error_log('lightmode is set');
 			// error_log($_POST["settheme"] . '-true');
-			setcookie("darkmode", $modeval,  time()+3600, '/');
+			setcookie("darkmode", $modeval,  time()+60*60*24*30, '/');
 			error_log($_COOKIE["darkmode"]);
 		} 
 		if($id === "0"){
 			$modeval = "dark";
 			error_log('darkmode is set');
 			// error_log($_POST["settheme"] . '-false');
-			setcookie("darkmode", $modeval,  time()+3600, '/');
+			setcookie("darkmode", $modeval,  time()+60*60*24*30, '/');
 			// $_COOKIE["darkmode"] = $modeval;
 			error_log($_COOKIE["darkmode"]);
 		}

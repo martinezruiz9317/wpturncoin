@@ -2,7 +2,7 @@
 get_header();
 ?>
 <div id="fullpage">
-    <div class="section">
+    <div id="homeHeroStc" class="section">
         <?php get_template_part('templates/home', 'people'); ?>
     </div>
     <div id="blockSection" class="section fp-auto-height">
@@ -485,18 +485,18 @@ get_header();
                 <div class="my-col-1-0 blocky"></div>
                 <div class="my-col-1-0 blocky"></div>
                 <div class="my-col-1-0 blocky"></div>
-                <div class="my-col-1-0 blocky"></div>
-                <div class="my-col-1-0 blocky"></div>
-                <div class="my-col-1-0 blocky"></div>
-                <div class="my-col-1-0 blocky"></div>
-                <div class="my-col-1-0 blocky"></div>
+                <div class="my-col-1-0 blocky b-hide-top"></div>
+                <div class="my-col-1-0 blocky b-hide"></div>
+                <div class="my-col-1-0 blocky b-hide"></div>
+                <div class="my-col-1-0 blocky b-hide"></div>
+                <div class="my-col-1-0 blocky b-hide"></div>
             </div>
             <div class="d-flex" style="margin-bottom: 30px;">
                 <div class="my-col-20 blocky-5"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-1.png" alt=""></div>
                 <div class="my-col-20 blocky-5"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-2.png" alt=""></div>
                 <div class="my-col-20 blocky-5"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-3.png" alt=""></div>
-                <div class="my-col-20 blocky-5"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-4.png" alt=""></div>
-                <div class="my-col-20 blocky-5"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-5.png" alt=""></div>
+                <div class="my-col-20 blocky-5 b-hide"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-4.png" alt=""></div>
+                <div class="my-col-20 blocky-5 b-hide"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/phone-5.png" alt=""></div>
             </div>
             <p class="light-col text-center" style="width: 768px; max-width: 100%; margin: 0 auto;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
         </div>

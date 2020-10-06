@@ -156,7 +156,9 @@ Version: 1.0.0
 }
 
 /* Header */
-
+#main #content-wrap{
+    padding-top: 160px;
+}
 
 #site-header-inner.container{
     width: 1200px;
@@ -186,7 +188,7 @@ li.current-menu-item a span:after{
     padding: 0 60px;
 }
 .tc-page-title{
-    padding-top: 50px;
+    padding-top: 100px;
 }
 .tc-page-title h2{
     margin: 0;
@@ -246,14 +248,8 @@ body.dark-mode #blog-entries .blog-entry:nth-child(even){
     display: inline-block;
 }
 .back-btn a{
-    font-size: 20px;
-    font-weight: 600;
-    color: #D0AD6A;
-    border: 2px solid #D0AD6A;
-    padding: 4px 40px;
-    width: 190px;
+    min-width: 160px;
     text-align: center;
-    display: inline-block;
 }
 .back-btn{
     max-width: 1000px;
@@ -269,6 +265,9 @@ body.dark-mode #blog-entries .blog-entry:nth-child(even){
 .single-event .meta.clr{
     padding-left: 20px;
     padding-right: 20px;
+}
+body.single.dark-mode .entry-content a{
+    color: #FF0000;
 }
 .meta-date i{
     display: none !important;
@@ -498,7 +497,7 @@ body.dark-mode #footer-widgets input[type="email"]{
 
 div#members-11 {
     /* background: #fcf9f4; */
-    padding-top: 30px;
+    padding-top: 100px;
 }
 #members-8 img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
     border-radius: 300px;
@@ -820,10 +819,13 @@ body.dark-mode {
     left: 0;
     right: 0;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: #000000;
+    
     z-index: 999999;
 }
-
+body.home #site-header, body.page-template-vision #site-header{
+    background-color: rgba(0, 0, 0, 0.35);
+}
 #site-header-inner {
     /* height: 100%;
     padding: 0 20px; */
@@ -1928,8 +1930,8 @@ svg {
 }
 
 @media (max-width: 400px) {
-    h1 {
-        font-size: 59px;
+    h1, #main h1 {
+        font-size: 56px;
     }
     h2 {
         font-size: 36px;
@@ -2114,8 +2116,10 @@ svg {
     .single .entry-title{
         font-size: 28px;
     }
-	
-	.my-col-20 {
+	#homeHeroStc{
+        height: auto !important;
+    }
+	.my-row .my-col-20 {
     	-ms-flex: 0 0 50%;
     	flex: 0 0 50%;
     	max-width: 50%;
@@ -2170,12 +2174,28 @@ svg {
 }
 
 @media (max-width: 400px) {
-	.my-col-20 {
+	.my-row  .my-col-20 {
     	-ms-flex: 0 0 100%;
     	flex: 0 0 100%;
     	max-width: 100%;
     	text-align: center;
-	}
+    }
+    .b-hide{
+        display: none;
+    }
+    .blocky{
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+    .blocky-5{
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .b-hide-top{
+        border-top: 0;
+    }
 }
   
 
