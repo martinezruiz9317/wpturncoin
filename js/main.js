@@ -218,6 +218,7 @@ jQuery(document).ready(function ($) {
         loopTop: false,
         easing: 'easeInOutCubic',
         verticalCentered: false,
+        responsiveWidth: 767,
     });
     // Scrolling Init end
 

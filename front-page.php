@@ -391,7 +391,7 @@ get_header();
 
                     <p class="light-col" style="margin-bottom: 20px;">Driven by TheXchange’s proprietary Global Popularity Index (GPX) algorithm, every athlete on earth could be ranked on the SportXchange™ in the GPX according to their performance.</p>
                     <div class="video-wrap">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/messi-video-holder.jpg" alt="Play Video" />
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JLVBc_J43V8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -508,7 +508,7 @@ get_header();
             echo $horizontallogo;
             ?>
             <h2>Equity structure</h2>
-            <h3 style="font-weight: 200; text-transform: uppercase;"><span class="c-gold" style="font-family: rajdhani; font-weight: 700;">Turn</span><span style="font-family: rajdhani; font-weight: 400;">Coin™</span> digital security</h3>
+            <h3 class="dark-c-whi" style="font-weight: 200; text-transform: uppercase;"><span class="c-gold" style="font-family: rajdhani; font-weight: 700;">Turn</span><span style="font-family: rajdhani; font-weight: 400;">Coin™</span> digital security</h3>
             <div class="graph-desktop">
                 <?php
                 $graphic = file_get_contents(get_stylesheet_directory_uri().'/images/graph.svg');

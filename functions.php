@@ -34,7 +34,7 @@ function turncoin_child_enqueue_parent_style()
 	wp_enqueue_script('TweenMax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js', array(), $version, true);
 	wp_enqueue_script('turncoin-js', get_stylesheet_directory_uri() . '/js/main.js', array(), $version, true);
 }
-add_action('wp_enqueue_scripts', 'turncoin_child_enqueue_parent_style');
+add_action('wp_enqueue_scripts', 'turncoin_child_enqueue_parent_style', 200);
 
 add_action('ocean_after_blog_entry_title', 'dmnAddDateAfterTitle');
 function dmnAddDateAfterTitle()
@@ -119,16 +119,19 @@ function dmnDisplayPageTitle()
 		<div class="tc-page-title">
 			<div class="container">
 				<div class="d-flex align-items-center justify-content-center">
-					<div class="line-divider flex-fill"></div>
+					<!-- <div class="line-divider flex-fill"></div> -->
 					<div class="pg-title">
-						<?php if (is_post_type_archive('event'))
+						<?php if (is_post_type_archive('event')){
+							echo '<h3 class="c-gold">PAST & UPCOMING</h3>';
 							echo '<h2>EVENTS</h2>';
+						}
 						else {
+							echo '<h3 class="c-gold">IN THE PRESS!</h3>';
 							echo '<h2>NEWS</h2>';
 						}
 						?>
 					</div>
-					<div class="line-divider flex-fill"></div>
+					<!-- <div class="line-divider flex-fill"></div> -->
 				</div>
 			</div>
 		</div>

@@ -186,6 +186,16 @@ li.current-menu-item a span:after{
 }
 .pg-title{
     padding: 0 60px;
+    text-align: center;
+}
+.pg-title h2{
+    font-weight: 800;
+    line-height: 1;
+    font-size: 70px;
+}
+.pg-title h3{
+    font-size: 24px;
+    margin-bottom: 0;
 }
 .tc-page-title{
     padding-top: 100px;
@@ -193,7 +203,7 @@ li.current-menu-item a span:after{
 .tc-page-title h2{
     margin: 0;
     font-size: 70px;
-    font-weight: 400;
+    font-weight: 800;
 }
 #menu-item-41 a span:after, #menu-item-41 a:hover span:after{
     display: none !important;
@@ -241,11 +251,14 @@ body.dark-mode #blog-entries .blog-entry:nth-child(even){
 .blog-entry-readmore a{
     font-size: 16px;
     font-weight: 400;
-    border: 2px solid #FF0000;
+    border: 1px solid #FF0000;
     padding: 8px 40px;
-    width: 190px;
+    width: 160px;
     text-align: center;
     display: inline-block;
+}
+.blog-entry-readmore a:hover{
+    color: #000000;
 }
 .back-btn a{
     min-width: 160px;
@@ -371,6 +384,18 @@ body.dark-mode #footer-widgets .menu-link:hover{
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+}
+#footer-widgets form label{
+    font-size: 12px;
+    font-weight: 500;
+}
+#footer-widgets form label span.label-span{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    display: block;
+}
+#footer-widgets form{
+    margin-bottom: 30px;
 }
 body.light-mode #footer-widgets input[type="email"]{
     color: #000000;
@@ -877,7 +902,7 @@ body.dark-mode {
     z-index: 999999;
 }
 body.home #site-header, body.page-template-vision #site-header{
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.55);
 }
 #site-header-inner {
     /* height: 100%;
@@ -1172,6 +1197,9 @@ body.dark-mode .block-icon svg path {
 .video-wrap {
     border: 5px solid #333333;
     background-color: #151515;
+}
+.video-wrap iframe{
+    display: block;
 }
 
 .tablinks:hover {
@@ -1529,6 +1557,12 @@ h3.graph-sec-text {
     letter-spacing: 0.2em;
     font-size: 22px;
 }
+body.dark-mode h3.graph-finite-text, body.dark-mode h3.graph-sec-text{
+    color: #ffffff;
+}
+body.dark-mode .dark-c-whi{
+    color: #ffffff;
+}
 
 /* Equity Structure End */
 
@@ -1568,7 +1602,7 @@ h3.graph-sec-text {
 
 /* Btn */
 
-.my-btn {
+.my-btn, #footFsubmit {
     display: inline-block;
     position: relative;
     background: none;
@@ -1582,6 +1616,10 @@ h3.graph-sec-text {
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+}
+#footFsubmit{
+    padding: 0;
+    font-weight: inherit;
 }
 
 .my-btn span {
@@ -1812,6 +1850,16 @@ h3.graph-sec-text {
 
 /* Home Hero End */
 
+/* FAQ */
+body.dark-mode .elementor-153 .elementor-element.elementor-element-d8ca9e8:not(.elementor-motion-effects-element-type-background) > .elementor-column-wrap,body.dark-mode .elementor-153 .elementor-element.elementor-element-d8ca9e8 > .elementor-column-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+    background-color: #000000;
+}
+body.dark-mode .elementor-153 .elementor-element.elementor-element-47ad4f4 .elementor-toggle .elementor-tab-title{
+    border-color: #FF0000;
+}
+body.dark-mode .elementor-153 .elementor-element.elementor-element-47ad4f4 .elementor-toggle .elementor-tab-title .elementor-toggle-icon i:before, body.dark-mode .elementor-153 .elementor-element.elementor-element-47ad4f4 .elementor-toggle .elementor-tab-content{
+    color: #ffffff;
+}
 /* Hero Crypto Cnt */
 
 .crypto-cnt {
