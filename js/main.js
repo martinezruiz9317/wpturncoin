@@ -55,23 +55,12 @@ jQuery(document).ready(function ($) {
         }
         $.ajax({
             url: adurl,
-            method: "POST",
-            cache: false,
             data: {
-                settheme: tid,
+                _ajax_nonce: dms,
                 action: 'turncoin_set_thememode_cookie',
-                security: dms
+                settheme: tid,
             },
-
             success: function (response) {
-                if (jQuery("#member-modal").hasClass('pop-is-open')) {
-                    jQuery("#member-modal").removeClass('pop-is-open');
-                    // jQuery("#member-modal").animate({
-                    //     width: '0',
-                    // }, 0, function() {
-
-                    // });
-                }
                 if (response['error'] == '1') {
                     console.log('There was an error setting the theme mode');
                 }
@@ -80,7 +69,20 @@ jQuery(document).ready(function ($) {
                 }
             }
         });
+        // var x = document.cookie;
+        // console.log(x);
     });
+
+    // function getCookie(name) {
+    //     var nameEQ = name + "=";
+    //     var ca = document.cookie.split(';');
+    //     for(var i=0;i < ca.length;i++) {
+    //         var c = ca[i];
+    //         while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    //     }
+    //     return null;
+    // }
     // Dark Mode toggle end
 
     // Hero 3d effect

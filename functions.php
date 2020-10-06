@@ -213,33 +213,35 @@ function my_excerpt_length($length)
 add_filter('oceanwp_excerpt', 'my_excerpt_length');
 
 
-add_action('wp', 'turncoin_add_theme_cookie');
+add_action('init', 'turncoin_add_theme_cookie');
 function turncoin_add_theme_cookie(){
 	// unset($_COOKIE["darkmode"]);
 	if (!isset($_COOKIE["darkmode"])) {
 		$ckval = "light";
 		error_log('Cookie Set for first time');
-		setcookie("darkmode", $ckval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
+		setcookie("darkmode", $ckval, time()+3600, '/');
 		error_log($_COOKIE["darkmode"]);
 	}
-
 	// foreach($_COOKIE as $key => $cookie){
 	// 	error_log($key.' => '. $cookie);
 	// }
 }
 
 add_filter( 'body_class', function( $classes ) {
-	if ($_COOKIE["darkmode"] === "dark") {
-		$darkmodeclass = array('dark-mode');
+	if(isset($_COOKIE["darkmode"])){
+		$darkmodeclass = array($_COOKIE["darkmode"].'-mode');
 	}
-	else if($_COOKIE["darkmode"] === "light"){
+	else{
+		// setcookie("darkmode", $ckval, time()+62208000, 'http://localhost:8888/turncoin.news/', $_SERVER['HTTP_HOST']);
 		$darkmodeclass = array('light-mode');
 	}
+	error_log($darkmodeclass[0]);
     return array_merge( $classes, $darkmodeclass );
 } );
 
 add_action( 'ocean_after_nav', 'addDarkModeSwtich' );
 function addDarkModeSwtich(){
+	error_log($_COOKIE["darkmode"]);
 	if ($_COOKIE["darkmode"] === "dark") {
 		$checked = 'checked';
 		error_log('checked');
@@ -269,32 +271,27 @@ add_action('wp_ajax_nopriv_turncoin_set_thememode_cookie', 'turncoin_set_thememo
 add_action('wp_ajax_turncoin_set_thememode_cookie', 'turncoin_set_thememode_cookie');
 function turncoin_set_thememode_cookie()
 {
-	check_ajax_referer('darkmode-check', 'security');
+	// check_ajax_referer('darkmode-check', 'security');
 	$mode = false;
-	if(isset($_POST['settheme'])){
+	if(isset($_GET['settheme'])){
 		$mode = true;
-		$id = $_POST['settheme'];
+		$id = $_GET['settheme'];
 		error_log($id);
-		if ($_COOKIE == "dark") {
-			$modeval = "dark";
+		if ($id == "1") {
+			$modeval = "light";
 			error_log('lightmode is set');
 			// error_log($_POST["settheme"] . '-true');
-			// setcookie("darkmode", $modeval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
-			$_COOKIE["darkmode"] = $modeval;
-		} else {
+			setcookie("darkmode", $modeval,  time()+3600, '/');
+			error_log($_COOKIE["darkmode"]);
+		} 
+		if($id === "0"){
 			$modeval = "dark";
 			error_log('darkmode is set');
 			// error_log($_POST["settheme"] . '-false');
-			// setcookie("darkmode", $modeval, time()+62208000, '/', $_SERVER['HTTP_HOST']);
-			$_COOKIE["darkmode"] = $modeval;
+			setcookie("darkmode", $modeval,  time()+3600, '/');
+			// $_COOKIE["darkmode"] = $modeval;
 			error_log($_COOKIE["darkmode"]);
 		}
 	}
-	// if($mode){
-	// 	wp_send_json(array('mode_set' => $mode));
-	// }
-	// else{
-	// 	wp_send_json(array('error' => '1'));
-	// }
-	wp_die();
+	wp_send_json(array('mode_set' => $mode));
 }
