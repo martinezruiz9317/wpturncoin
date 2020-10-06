@@ -2085,6 +2085,19 @@ svg {
 
  
 /* Mobile Styles */
+@media (max-width: 1279px) {
+    .switch-cnt {
+        position: absolute;
+        right: 120px;
+    }
+    .oceanwp-mobile-menu-icon.mobile-right {
+        -ms-flex-order: 5;
+        order: 5;
+        right: 0;
+        position: absolute;
+    }
+}
+
 @media only screen and (max-width: 767px){
     .blog-entry.thumbnail-entry .thumbnail,.blog-entry.thumbnail-entry .blog-entry-content{
         width: 100%;
