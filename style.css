@@ -519,7 +519,7 @@ body.dark-mode #footer-widgets input[type="email"]{
     content: "";
     display: block;
     position: absolute;
-    background: url(http://localhost:8888/turncoin/wordpress/wp-content/uploads/2020/10/close.png);
+    background: url('images/close.png');
     background-size: cover;
     background-position: center;
     width: 35px;

@@ -11,16 +11,24 @@ jQuery(document).ready(function ($) {
         slidesToShow: 1,
         slidesToScroll: 1,
     });
-    $(".close-popup-member").click(function (e) {
-        e.preventDefault();
+
+    $(document).keyup(function(e) {
+        if (e.keyCode === 27 && $("#member-modal").hasClass('pop-is-open')){
+            memPopupClose();
+        }
+    });
+
+    function memPopupClose(){
         $("#member-modal").removeClass('pop-is-open');
         $("html").removeClass('noscroll');
         $("body").removeClass('noscroll');
-        // $("#member-modal").animate({
-        //     width: '0',
-        // }, 100, function() {
-
-        // });
+    }
+    $(".close-popup-member").click(function (e) {
+        e.preventDefault();
+        memPopupClose();
+    });
+    $('#member-modal').click(function(e){
+        memPopupClose();
     });
 
     // Timeline Slider
