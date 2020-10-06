@@ -175,7 +175,7 @@ li.current-menu-item a span:after{
 #menu-item-41 a{
     display: inline !important;
     padding: 10px 20px !important;
-    border: 1px solid #D0AD6A;
+    border: 1px solid #FF0000;
 }
 .line-divider{
     height: 1px;
@@ -352,6 +352,32 @@ body.dark-mode .blog-entry-title.entry-title a, body.dark-mode .blog-entry-readm
 }
 .city-cnt{
     margin-bottom: 35px;
+}
+body.light-mode #footer-widgets .menu-link{
+    color: #000000;
+}
+body.light-mode #footer-widgets .menu-link:hover{
+    color: #000000;
+}
+body.dark-mode #footer-widgets .menu-link{
+    color: #ffffff;
+}
+body.dark-mode #footer-widgets .menu-link:hover{
+    color: #ffffff;
+}
+#footer-widgets input[type="email"]{
+    border: 1px solid #D0AD6A;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+body.light-mode #footer-widgets input[type="email"]{
+    color: #000000;
+}
+body.dark-mode #footer-widgets input[type="email"]{
+    color: #ffffff;
 }
 .footer-address{
     font-size: 12px;
@@ -616,6 +642,9 @@ p.member-desc {
     color: #000000;
     font-size: 14px;
     font-weight: 300;
+}
+body.dark-mode p.member-desc a{
+    color: #ffffff;
 }
 .meber-cat-wrap {
     max-width: 1300px;
@@ -1290,7 +1319,7 @@ body.dark-mode #txChangeSection {
 
 .summary-books {
     width: 100%;
-    margin-bottom: -80px;
+    padding-top: 80px;
 }
 
 #summary {
@@ -1312,6 +1341,9 @@ body.dark-mode #txChangeSection {
 
 #simplyPowerful .container {
     padding: 0 30px;
+}
+body.dark-mode .summary-author{
+    color: #ffffff;
 }
 
 #simplyPowerful svg {

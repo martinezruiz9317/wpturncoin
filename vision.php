@@ -80,7 +80,7 @@ get_header();
             <div class="my-row align-items-center h-100">
                 <div class="my-col-6 text-center ov-col-1">
                     <img width="450" src="<?php echo get_stylesheet_directory_uri(); ?>/images/cards.png" alt="">
-                    <button class="my-btn"><span>Why this time?</span></button>
+                    <a href="<?php echo get_site_url().'/summary/'; ?>"><button  class="my-btn"><span>Why this time?</span></button></a>
                 </div>
                 <div class="my-col-6 ov-col-2">
                     <h3 class="c-gold">Simply Powerful</h3>
