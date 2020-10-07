@@ -175,9 +175,9 @@ li.current-menu-item a span:after{
     -o-transform: scaleX(1) !important;
 }
 #menu-item-41 a{
-    display: inline !important;
-    padding: 10px 20px !important;
-    border: 1px solid #FF0000;
+    /* display: inline !important; */
+    /* padding: 10px 20px !important; */
+    /* border: 1px solid #FF0000; */
 }
 .line-divider{
     height: 1px;
@@ -205,9 +205,9 @@ li.current-menu-item a span:after{
     font-size: 70px;
     font-weight: 800;
 }
-#menu-item-41 a span:after, #menu-item-41 a:hover span:after{
+/* #menu-item-41 a span:after, #menu-item-41 a:hover span:after{
     display: none !important;
-}
+} */
 .blog-entry.thumbnail-entry .thumbnail{
     width: 40%;
 }
@@ -318,6 +318,9 @@ body.dark-mode .blog-entry-title.entry-title a, body.dark-mode .blog-entry-readm
     font-size: 26px;
     margin: 0;
     font-weight: 300;
+}
+.blog-entry-title.entry-title a:hover{
+    color: #000000;
 }
 .slick-dots li button{
     background: #000000;
@@ -1794,7 +1797,104 @@ body.dark-mode .dark-c-whi{
 }
 
 /* Btn End */
+/* BTN NAV */
+#menu-item-41 a {
+    display: inline-block !important;
+    position: relative !important;
+    background: none !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    letter-spacing: 0 !important;
+    margin: 27px 0 !important;
+    line-height: 1 !important;
+    background: transparent !important;
+    border: 1px solid #FF0000 !important;
+    border-radius: 2px !important;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+#menu-item-41 a span {
+    display: block !important;
+    padding: 14px 30px !important;
+    text-transform: uppercase !important;
+    font-family: poppins !important;
+}
 
+#menu-item-41 a::before, #menu-item-41 a::after {
+    content: "" !important;
+    width: 0 !important;
+    height: 1px !important;
+    position: absolute !important;
+    background: #D0AD6A !important;
+    transition: all 0.2s linear !important;
+}
+#menu-item-41 a span::before, #menu-item-41 a span::after {
+    content: "" !important;
+    width: 1px !important;
+    height: 0 !important;
+    position: absolute !important;
+    background: #D0AD6A !important;
+    transition: all 0.2s linear !important;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+
+#menu-item-41 a:hover::before, #menu-item-41 a:hover::after {
+    width: 100% !important;
+}
+
+#menu-item-41 a:hover span::before, #menu-item-41 a:hover span::after {
+    height: 100% !important;
+}
+
+#menu-item-41 a::after {
+    left: 0 !important;
+    bottom: -1px !important;
+    transition-delay: 0.6s !important;
+}
+
+#menu-item-41 a span::after {
+    transition-delay: 0.4s !important;
+    left: unset !important;
+    right: -1px !important;
+    bottom: 0 !important;
+    display: block !important;
+}
+
+#menu-item-41 a::before {
+    right: 0 !important;
+    top: -1px !important;
+    transition-delay: 0.2s !important;
+}
+
+#menu-item-41 a span::before {
+    transition-delay: 0s !important;
+    left: -1px !important;
+    top: 0 !important;
+}
+
+#menu-item-41 a:hover::after {
+    transition-delay: 0s !important;
+}
+
+#menu-item-41 a:hover span::after {
+    transition-delay: 0.2s !important;
+}
+
+#menu-item-41 a:hover::before {
+    transition-delay: 0.4s !important;
+}
+
+#menu-item-41 a:hover span::before {
+    transition-delay: 0.6s !important;
+}
+
+/* BTN NAV */
 /* 3d Effect */
 
 .layer-4 {
