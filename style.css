@@ -259,6 +259,8 @@ body.dark-mode #blog-entries .blog-entry:nth-child(even){
 }
 .blog-entry-readmore a:hover{
     color: #000000;
+    border-color: #D0AD6A;
+    transition-delay: .8s;
 }
 .back-btn a{
     min-width: 160px;
@@ -1701,6 +1703,93 @@ body.dark-mode .dark-c-whi{
 }
 
 .my-btn:hover span::before {
+    transition-delay: 0.6s;
+}
+
+/* Blog Btn */
+
+.blog-entry-readmore a {
+    position: relative;
+}
+
+.blog-entry-readmore a span {
+    display: block;
+    /* padding: 14px 30px; */
+    text-transform: uppercase;
+    font-family: poppins;
+}
+
+.blog-entry-readmore a::before, .blog-entry-readmore a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    position: absolute;
+    background: #D0AD6A;
+    transition: all 0.2s linear;
+}
+
+.blog-entry-readmore a span::before, .blog-entry-readmore a span::after {
+    content: "";
+    width: 1px;
+    height: 0;
+    position: absolute;
+    background: #D0AD6A;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+.blog-entry-readmore a span::before {
+    left: -1px;
+    top: 0;
+}
+
+.blog-entry-readmore a:hover::before, .blog-entry-readmore a:hover::after {
+    width: 100%;
+}
+
+.blog-entry-readmore a:hover span::before, .blog-entry-readmore a:hover span::after {
+    height: 100%;
+}
+
+.blog-entry-readmore a::after {
+    left: 0;
+    bottom: -1px;
+    transition-delay: 0.6s;
+}
+
+.blog-entry-readmore a span::after {
+    transition-delay: 0.4s;
+    right: -1px;
+    bottom: 0;
+}
+
+.blog-entry-readmore a::before {
+    right: 0;
+    top: -1px;
+    transition-delay: 0.2s;
+}
+
+.blog-entry-readmore span a::before {
+    transition-delay: 0s;
+    left: -1px;
+    top: 0;
+}
+
+.blog-entry-readmore a:hover::after {
+    transition-delay: 0s;
+}
+
+.blog-entry-readmore a:hover span::after {
+    transition-delay: 0.2s;
+}
+
+.blog-entry-readmore a:hover::before {
+    transition-delay: 0.4s;
+}
+
+.blog-entry-readmore a:hover span::before {
     transition-delay: 0.6s;
 }
 
